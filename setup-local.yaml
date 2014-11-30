@@ -1,0 +1,40 @@
+---
+- hosts: 127.0.0.1
+  connection: local 
+  tasks:
+    - name: install tmux
+      homebrew: name=tmux state=present
+
+    - name: install tmux-powerline
+      git: repo=https://github.com/erikw/tmux-powerline.git dest=~/git/tmux-powerline
+
+    - name: copy .gitconfig
+      copy: src=./dotfiles/.gitconfig dest=~/
+
+    - name: copy .tmux.conf
+      copy: src=./dotfiles/.tmux.conf dest=~/
+
+    - name: copy .vimrc
+      copy: src=./dotfiles/.vimrc dest=~/
+
+    - name: copy .bashrc
+      copy: src=./bash/.bashrc dest=~/
+
+    - name: copy .bash_profile
+      copy: src=./bash/.bash_profile dest=~/
+
+    - name: clone vim vundle
+      git: repo=https://github.com/gmarik/vundle.git  dest=~/.vim/vundle.git accept_hostkey=yes 
+
+    - name: add sanemat/font Formula into homebrew
+      shell: brew tap sanemat/font
+
+    - name: install automake
+      homebrew: name=automake state=present
+    
+    - name: install ricty font
+      homebrew: name=ricty state=present
+    
+    - name: move to Font Directory
+      shell: cp -r /usr/local/Cellar/ricty/*/share/fonts/Ricty* ~/Library/Fonts/
+
