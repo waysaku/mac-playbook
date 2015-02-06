@@ -6,7 +6,7 @@
       homebrew: name=tmux state=present
 
     - name: install tmux-powerline
-      git: repo=https://github.com/erikw/tmux-powerline.git dest=~/git/tmux-powerline
+      git: repo=https://github.com/waysaku/tmux-powerline.git dest=~/git/tmux-powerline
 
     - name: copy .gitconfig
       copy: src=./dotfiles/.gitconfig dest=~/
