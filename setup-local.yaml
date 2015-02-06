@@ -18,10 +18,10 @@
       copy: src=./dotfiles/.vimrc dest=~/
 
     - name: copy .bashrc
-      copy: src=./bash/.bashrc dest=~/
+      copy: src=./dotfiles/.bashrc dest=~/
 
     - name: copy .bash_profile
-      copy: src=./bash/.bash_profile dest=~/
+      copy: src=./dotfiles/.bash_profile dest=~/
 
     - name: clone vim vundle
       git: repo=https://github.com/gmarik/vundle.git  dest=~/.vim/vundle.git accept_hostkey=yes 
