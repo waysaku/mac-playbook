@@ -64,8 +64,6 @@ let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
  hi PMenuSbar ctermbg=4
 
 
-
-
 " -----quickhl------
 nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
@@ -74,14 +72,15 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 
 
 " ----- color settings ------
+set t_Co=256
 colorscheme molokai
 
 " hightlight current line
-:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=None
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=None
+:hi CursorLine   cterm=NONE ctermbg=234 guibg=0 guifg=None
+:hi CursorColumn cterm=NONE ctermbg=234 guibg=0 guifg=None
 
 " highlight current word
-:hi CurrentWord term=None ctermbg=green ctermfg=white
+:hi CurrentWord term=NONE ctermbg=219 ctermfg=black
 function! s:HighlightCurrentWord()
   function! l:GetCurrentWord()
     function! l:EscapeText( text )

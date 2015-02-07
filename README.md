@@ -1,5 +1,8 @@
 # required
 
+## setup iTerm2 for 256 colors
+![rapid-view](https://github.com/waysaku/mac-playbook/blob/master/resources/iterm2256.png)
+
 ## install ansible
 ```
 brew install ansible

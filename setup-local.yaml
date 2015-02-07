@@ -39,3 +39,9 @@
     - name: move to Font Directory
       shell: cp -r /usr/local/Cellar/ricty/*/share/fonts/Ricty* ~/Library/Fonts/
 
+    - name: download color scheme
+      git: repo=https://github.com/waysaku/molokai.git dest=~/git/molokai
+
+    - name: copy color scheme 
+      copy: src=~/git/molokai/colors/molokai.vim dest=~/.vim/colors/
+
