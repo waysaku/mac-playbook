@@ -14,5 +14,5 @@ and download dmg file.
 # execution
 ```
 $ cd [cloned repository directory]  
-$ ansible-playbook setup-local.yaml  
+$ ansible-playbook setup-local.yaml -i hosts
 ```
