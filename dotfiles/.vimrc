@@ -53,6 +53,7 @@ Bundle 'neocomplcache'
 Bundle 'Tagbar'
 Bundle 't9md/vim-textmanip'
 Bundle 'gregsexton/gitv'
+Bundle 'kchmck/vim-coffee-script'
 filetype plugin indent on     " required!
 
 
