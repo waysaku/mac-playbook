@@ -77,41 +77,9 @@ set t_Co=256
 colorscheme molokai
 
 " hightlight current line
-:hi CursorLine   cterm=NONE ctermbg=234 guibg=0 guifg=None
-:hi CursorColumn cterm=NONE ctermbg=234 guibg=0 guifg=None
-
-" highlight current word
-:hi CurrentWord term=NONE ctermbg=219 ctermfg=black
-function! s:HighlightCurrentWord()
-  function! l:GetCurrentWord()
-    function! l:EscapeText( text )
-      return substitute( escape(a:text, '\' . '^$.*[~'), "\n", '\\n', 'ge' )
-    endfunction
-
-    let l:cword = expand('<cword>')
-    if !empty(l:cword)
-      let l:regexp = l:EscapeText(l:cword)
-      if l:cword =~# '^\k\+$'
-        let l:regexp = '\<' . l:regexp . '\>'
-      endif
-      return l:regexp
-    else
-      return ''
-    endif
-  endfunction
-
-  let l:word = l:GetCurrentWord()
-  if !empty(l:word)
-    if exists("w:current_match")
-      call matchdelete(w:current_match)
-    endif
-    let w:current_match = matchadd('CurrentWord', l:word, 0)
-  endif
-endfunction
-augroup cwh
- autocmd!
-  autocmd CursorMoved,CursorMovedI * call s:HighlightCurrentWord()
-augroup END
+hi clear CursorLine
+hi CursorLine   cterm=NONE ctermbg=234 guibg=0   guifg=None
+hi CursorColumn cterm=NONE ctermbg=234 guibg=0   guifg=None
 
 
 
