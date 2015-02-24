@@ -54,6 +54,9 @@ Bundle 'Tagbar'
 Bundle 't9md/vim-textmanip'
 Bundle 'gregsexton/gitv'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'kannokanno/previm'
+Bundle 'tyru/open-browser.vim'
 filetype plugin indent on     " required!
 
 
@@ -96,3 +99,5 @@ xmap <C-l> <Plug>(textmanip-move-right)
 nmap <F10> <Plug>(textmanip-toggle-mode)
 xmap <F10> <Plug>(textmanip-toggle-mode)
 
+" markdown file prefix
+au BufRead,BufNewFile *.md set filetype=markdown
