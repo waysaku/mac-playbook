@@ -28,21 +28,6 @@ alias gb='git branch'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
 
-
-
-# Git branch details
-function parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
-}
-function parse_git_branch() {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
-# Change this symbol to something sweet.
-# (http://en.wikipedia.org/wiki/Unicode_symbols)
-symbol="⚡ "
-
-
-
 # Only show the current directory's name in the tab 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
@@ -59,8 +44,8 @@ export DOCKER_CERT_PATH=/Users/a11068/.boot2docker/certs/boot2docker-vm
 
 
 export PGDATA=/usr/local/var/postgres
-export LANG=ja_JP.UTF-8
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n$symbol\[$RESET\]"
-export PS2="\[$ORANGE\]→ \[$RESET\]"
-PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+source /usr/local/git/contrib/completion/git-prompt.sh
+source /usr/local/git/contrib/completion/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '

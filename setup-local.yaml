@@ -6,9 +6,6 @@
     - name: install tmux
       homebrew: name=tmux state=present
 
-    - name: install tmux-powerline
-      git: repo=https://github.com/waysaku/tmux-powerline.git dest=~/git/tmux-powerline
-
     - name: copy .gitconfig
       copy: src=./dotfiles/.gitconfig dest=~/
 
@@ -27,21 +24,17 @@
     - name: clone vim vundle
       git: repo=https://github.com/gmarik/vundle.git  dest=~/.vim/vundle.git accept_hostkey=yes 
 
-    - name: add sanemat/font Formula into homebrew
-      shell: brew tap sanemat/font
-
-    - name: install automake
-      homebrew: name=automake state=present
-    
-    - name: install ricty font
-      homebrew: name=ricty state=present
-    
-    - name: move to Font Directory
-      shell: cp -r /usr/local/Cellar/ricty/*/share/fonts/Ricty* ~/Library/Fonts/
-
     - name: download color scheme
       git: repo=https://github.com/waysaku/molokai.git dest=~/git/molokai
 
     - name: copy color scheme 
       copy: src=~/git/molokai/colors/molokai.vim dest=~/.vim/colors/
 
+    - name: clone git repository
+      git: repo=https://github.com/git/git.git dest=~/git/git
+
+    - name: copy git-completion.bash and git-prompt.sh
+      copy: src=/usr/local/git/contrib/completion/git-completion.bash dest=/usr/local/git/contrib/completion/
+
+    - name: copy git-completion.bash and git-prompt.sh
+      copy: src=/usr/local/git/contrib/completion/git-prompt.sh dest=/usr/local/git/contrib/completion/
