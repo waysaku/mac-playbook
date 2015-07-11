@@ -37,4 +37,4 @@
       copy: src=~/git/git/contrib/completion/git-completion.bash dest=/usr/local/git/contrib/completion/
 
     - name: copy git-prompt.sh
-      copy: src=~/gi/git/contrib/completion/git-prompt.sh dest=/usr/local/git/contrib/completion/
+      copy: src=~/git/git/contrib/completion/git-prompt.sh dest=/usr/local/git/contrib/completion/
