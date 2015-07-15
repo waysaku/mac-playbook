@@ -6,6 +6,9 @@
     - name: install tmux
       homebrew: name=tmux state=present
 
+    - name: install reattach-to-user-namespace
+      homebrew: name=reattach-to-user-namespace state=present
+
     - name: copy .gitconfig
       copy: src=./dotfiles/.gitconfig dest=~/
 
