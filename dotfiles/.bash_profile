@@ -33,7 +33,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
 
 source ~/.nvm/nvm.sh
-nvm use v0.11.12
+nvm use v0.12.7
 
 
 
