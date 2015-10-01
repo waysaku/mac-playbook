@@ -37,7 +37,7 @@
       shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
     
     - name: install nodejs on nvm
-      shell: source ~/.bashrc && nvm install v0.11.12 && nvm use v0.11.12
+      shell: source ~/.bashrc && nvm install v0.12.7 && nvm use v0.12.7
 
     - name: copy git-completion.bash 
       copy: src=./git-bashfiles/git-completion.bash dest=/usr/local/git/contrib/completion/
