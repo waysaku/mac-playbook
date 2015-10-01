@@ -24,8 +24,8 @@
     - name: copy .bash_profile
       copy: src=./dotfiles/.bash_profile dest=~/
 
-    - name: clone vim vundle
-      git: repo=https://github.com/gmarik/vundle.git  dest=~/.vim/vundle.git accept_hostkey=yes 
+    - name: clone vim neovundle
+      git: repo=https://github.com/Shougo/neobundle.vim  dest=~/.vim/bundle/neobundle.vim accept_hostkey=yes 
 
     - name: download color scheme
       git: repo=https://github.com/waysaku/molokai.git dest=~/git/molokai
