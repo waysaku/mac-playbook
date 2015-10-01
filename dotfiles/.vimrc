@@ -23,9 +23,6 @@ set scrolloff=10
 set showmatch
 set cursorline
 
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-hi Visual guibg=Blue ctermbg=Blue ctermfg=black
-hi Search gui=Bold guifg=Black guibg=Yellow cterm=Bold ctermfg=Black ctermbg=Yellow
 
 nnoremap <C-Tab>   gt
 
@@ -79,6 +76,10 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 set t_Co=256
 colorscheme molokai
 
+hi Visual guibg=DarkBlue ctermbg=DarkBlue
+hi VisualNOS guibg=DarkBlue ctermbg=DarkBlue
+hi Search gui=Bold guifg=Black guibg=Yellow cterm=Bold ctermfg=Black ctermbg=Yellow
+
 " hightlight current line
 hi clear CursorLine
 hi CursorLine   cterm=NONE ctermbg=234 guibg=0   guifg=None
@@ -101,3 +102,7 @@ xmap <F10> <Plug>(textmanip-toggle-mode)
 
 " markdown file prefix
 au BufRead,BufNewFile *.md set filetype=markdown
+
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
+
