@@ -31,12 +31,19 @@ alias gp='git push'
 # Only show the current directory's name in the tab 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
-
 source ~/.nvm/nvm.sh
 nvm use v6.0.0
 
-
-
+# ===Go Settings===
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin/
+# clone private repo
+function goc() {
+  USERNAME=$1
+  REPO=$2
+  `YOUR_GITHUB_USER=${USERNAME}; REPO=${REPO}; git clone git@github.com:${USERNAME}/${REPO}.git $GOPATH/src/github.com/${USERNAME}/${REPO}`
+}
+alias goc=goc
 
 export LC_CTYPE=ja_JP.UTF-8
 export PGDATA=/usr/local/var/postgres
