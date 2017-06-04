@@ -27,6 +27,7 @@ alias gk='git checkout'
 alias gb='git branch'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
+alias gd="git diff"
 
 # Only show the current directory's name in the tab 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
