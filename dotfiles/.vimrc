@@ -78,7 +78,9 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " ----- color settings ------
 set t_Co=256
-colorscheme molokai
+syntax enable
+autocmd ColorScheme * highlight Normal ctermbg=none
+colorscheme solarized
 
 hi Visual guibg=DarkBlue ctermbg=DarkBlue
 hi VisualNOS guibg=DarkBlue ctermbg=DarkBlue
