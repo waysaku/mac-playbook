@@ -31,10 +31,10 @@
       git: repo=https://github.com/Shougo/neobundle.vim  dest=~/.vim/bundle/neobundle.vim accept_hostkey=yes 
 
     - name: download color scheme
-      git: repo=https://github.com/waysaku/vim-colors-solarized dest=~/git/vim-colors-solarized
+      git: repo=https://github.com/waysaku/vim dest=~/git/vim
 
     - name: copy color scheme 
-      copy: src=~/git/vim-colors-solarized/colors/solarized.vim dest=~/.vim/colors/
+      copy: src=~/git/vim/colors/dracula.vim dest=~/.vim/colors/
 
     - name: install nvm
       shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash

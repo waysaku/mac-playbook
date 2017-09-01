@@ -80,7 +80,7 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 set t_Co=256
 syntax enable
 autocmd ColorScheme * highlight Normal ctermbg=none
-colorscheme solarized
+colorscheme dracula
 
 hi Visual guibg=DarkBlue ctermbg=DarkBlue
 hi VisualNOS guibg=DarkBlue ctermbg=DarkBlue
