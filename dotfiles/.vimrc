@@ -57,6 +57,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 call neobundle#end()
 filetype plugin indent on

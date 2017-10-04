@@ -119,12 +119,16 @@
 	<true/>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>648 588 620 392 0 0 1920 1177 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>457 303 918 498 0 0 1920 1177 </string>
+	<string>457 189 918 498 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>39 12 1711 1132 0 0 1920 1177 </string>
+	<string>63 0 1781 1030 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1084 190 570 452 0 0 1920 1177 </string>
+	<string>15 0 1872 996 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>890 106 990 452 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -830,7 +834,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.2196342313078028</real>
+			<real>0.16132478234330572</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1652,7 +1656,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-21T03:42:26Z</date>
+	<date>2017-09-18T09:21:17Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
