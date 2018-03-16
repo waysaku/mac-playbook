@@ -33,7 +33,7 @@ alias gd="git diff"
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
 source ~/.nvm/nvm.sh
-nvm use v6.11.0
+nvm use v8.9.3
 
 # ===Go Settings===
 export GOPATH=$HOME/go
@@ -64,3 +64,6 @@ source /usr/local/git/contrib/completion/git-prompt.sh
 source /usr/local/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+
+# go language environment setting
+eval "$(goenv init -)"
