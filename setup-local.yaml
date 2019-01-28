@@ -48,6 +48,8 @@
 
     - name: install nvm
       shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
+      args:
+        warn: False
     
     - name: copy git-completion.bash 
       copy: src=./git-bashfiles/git-completion.bash dest=/usr/local/git/contrib/completion/
