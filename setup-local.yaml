@@ -46,6 +46,6 @@
       copy: src=./git-bashfiles/git-prompt.sh dest=/usr/local/git/contrib/completion/
 
     - name: install nodejs on nvm
-      shell: source ~/.bashrc && nvm install v6.0.0 && nvm use v6.0.0
+      shell: source ~/.bashrc && nvm install v10.15.0 && nvm use v10.15.0
 
 
