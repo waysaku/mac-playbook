@@ -9,6 +9,16 @@
     - name: install reattach-to-user-namespace
       homebrew: name=reattach-to-user-namespace state=present
 
+    - name: brew tap for installing Ricty font
+      homebrew_tap:
+        name: sanemat/font
+
+    - name: install Ricty font
+      homebrew: name=ricty state=present
+
+    - name: finish installing Ricty font
+      shell: cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/ && fc-cache -vf
+
     - name: copy .gitconfig
       copy: src=./dotfiles/.gitconfig dest=~/
 
