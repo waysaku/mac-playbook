@@ -63,7 +63,7 @@ export PGDATA=/usr/local/var/postgres
 source /usr/local/git/contrib/completion/git-prompt.sh
 source /usr/local/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='waysaku:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+export PS1='\n\[\033[1;36m\]\W/ \[\033[0m\]\t\[\033[1;32m\] $(__git_ps1)\[\033[0m\] '
 
 # go language environment setting
 eval "$(goenv init -)"
