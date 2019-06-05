@@ -63,7 +63,10 @@ export PGDATA=/usr/local/var/postgres
 source /usr/local/git/contrib/completion/git-prompt.sh
 source /usr/local/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\n\[\033[1;36m\]\W/ \[\033[0m\]\t\[\033[1;32m\] $(__git_ps1)\[\033[0m\] '
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+export PS1="\t# \[\e[1;34m\]\u\[\e[m\]@\w\[\e[1;31m\] \$(parse_git_branch)\[\e[m\]"
 
 # go language environment setting
 eval "$(goenv init -)"
