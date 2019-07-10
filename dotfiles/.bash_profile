@@ -33,7 +33,7 @@ alias gd="git diff"
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
 source ~/.nvm/nvm.sh
-nvm use v8.9.3
+nvm use v10.15.0
 
 # ===Go Settings===
 export GOPATH=$HOME/go
