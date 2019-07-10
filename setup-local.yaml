@@ -52,10 +52,10 @@
         warn: False
     
     - name: copy git-completion.bash 
-      copy: src=./git-bashfiles/git-completion.bash dest=/usr/local/git/contrib/completion/
+      copy: src=./git-bashfiles/git-completion.bash dest=~/
 
     - name: copy git-prompt.sh
-      copy: src=./git-bashfiles/git-prompt.sh dest=/usr/local/git/contrib/completion/
+      copy: src=./git-bashfiles/git-prompt.sh dest=~/
 
     - name: install nodejs on nvm
       shell: source ~/.bashrc && nvm install v10.15.0 && nvm use v10.15.0

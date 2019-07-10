@@ -60,8 +60,8 @@ alias goc=goc
 export LC_CTYPE=ja_JP.UTF-8
 export PGDATA=/usr/local/var/postgres
 
-source /usr/local/git/contrib/completion/git-prompt.sh
-source /usr/local/git/contrib/completion/git-completion.bash
+source ~/git-prompt.sh
+source ~/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
