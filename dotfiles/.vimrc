@@ -33,33 +33,38 @@ nmap <C-l> :vertical resize +5<CR>
 nmap <C-h> :vertical resize -5<CR>
 
 
-" ----neobundle settings-----
-set nocompatible
-filetype off
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
+" dein.vim settings
+if &compatible
+  set nocompatible
 endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
-NeoBundle 'The-NERD-tree'
-NeoBundle 'quickhl.vim'
-NeoBundle 'quickrun.vim'
-NeoBundle 'Emmet.vim'
-NeoBundle 'fugitive.vim'
-NeoBundle 'neocomplcache'
-NeoBundle 'Tagbar'
-NeoBundle 't9md/vim-textmanip'
-NeoBundle 'gregsexton/gitv'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'bronson/vim-trailing-whitespace'
-
-call neobundle#end()
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('vim-scripts/The-NERD-tree')
+    call dein#add('vim-scripts/quickhl.vim')
+    call dein#add('vim-scripts/quickrun.vim')
+    call dein#add('vim-scripts/Emmet.vim')
+    call dein#add('vim-scripts/fugitive.vim')
+    call dein#add('vim-scripts/neocomplcache')
+    call dein#add('vim-scripts/Tagbar')
+    call dein#add('t9md/vim-textmanip')
+    call dein#add('gregsexton/gitv')
+    call dein#add('kchmck/vim-coffee-script')
+    call dein#add('kannokanno/previm')
+    call dein#add('tyru/open-browser.vim')
+    call dein#add('Shougo/unite.vim')
+    call dein#add('Shougo/neomru.vim')
+    call dein#add('nathanaelkane/vim-indent-guides')
+    call dein#add('bronson/vim-trailing-whitespace')
+  endif
+  call dein#end()
+  call dein#save_state()
+endif
 filetype plugin indent on
 
 
