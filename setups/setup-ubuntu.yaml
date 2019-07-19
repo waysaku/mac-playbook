@@ -49,6 +49,6 @@
 
 - name: install node and set version
   shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install v10.15.0 && nvm alias default v10.15.0"
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install v10.15.0 && nvm use --delete-prefix v10.15.0"
     creates={{ ansible_env.HOME }}/.nvm/alias
 
