@@ -1,0 +1,54 @@
+---
+- name: Install curl
+  apt:
+    name: curl
+    state: present
+
+- name: Install tmux
+  apt:
+    name: tmux
+    state: present
+
+- name: copy .gitconfig
+  copy: src=./dotfiles/.gitconfig dest=~/
+
+- name: copy .tmux.conf
+  copy: src=./dotfiles/.tmux.conf dest=~/
+
+- name: copy .vimrc
+  copy: src=./dotfiles/.vimrc dest=~/
+
+- name: copy .bashrc
+  copy: src=./dotfiles/.bashrc dest=~/
+
+- name: copy .bash_profile
+  copy: src=./dotfiles/.bash_profile dest=~/
+
+- name: copy .editorconfig
+  copy: src=./dotfiles/.editorconfig dest=~/
+
+- name: clone vim neovundle
+  git: repo=https://github.com/Shougo/neobundle.vim  dest=~/.vim/bundle/neobundle.vim accept_hostkey=yes
+
+- name: download color scheme
+  git: repo=https://github.com/waysaku/vim dest=~/git/vim
+
+- name: copy color scheme
+  copy: src=~/git/vim/colors/dracula.vim dest=~/.vim/colors/
+
+- name: install nvm
+  shell: mkdir ~/.nvm && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+    warn: false
+
+- name: copy git-completion.bash
+  copy: src=./git-bashfiles/git-completion.bash dest=~/
+
+- name: copy git-prompt.sh
+  copy: src=./git-bashfiles/git-prompt.sh dest=~/
+
+- name: install nodejs on nvm
+  shell: source ~/.bashrc && nvm install v10.15.0 && nvm use v10.15.0
+
+
