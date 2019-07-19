@@ -39,22 +39,24 @@
 - name: download color scheme
   git: repo=https://github.com/waysaku/vim dest=~/git/vim
 
-- name: copy color scheme 
+- name: copy color scheme
   copy: src=~/git/vim/colors/dracula.vim dest=~/.vim/colors/
 
-- name: install nvm
-  shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-  args:
-    warn: False
-
-- name: copy git-completion.bash 
+- name: copy git-completion.bash
   copy: src=./git-bashfiles/git-completion.bash dest=~/
 
 - name: copy git-prompt.sh
   copy: src=./git-bashfiles/git-prompt.sh dest=~/
 
-- name: install nodejs on nvm
-  shell: source ~/.bashrc && nvm install v10.15.0 && nvm use v10.15.0
+- name: install goenv
+  git: repo=https://github.com/syndbg/goenv.git  dest=~/.goenv accept_hostkey=yes
 
+- name: install nvm
+  shell: >
+    curl https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | sh
+    creates={{ ansible_env.HOME }}/.nvm/nvm.sh
 
-
+- name: install node and set version
+  shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install v10.15.0 && nvm alias default v10.15.0"
+    creates={{ ansible_env.HOME }}/.nvm/alias
