@@ -56,4 +56,4 @@
   args:
     executable: /bin/bash
     chdir: "{{ ansible_env.HOME }}"
-    creates: "{{ ansible_env.HOME }}/.nvm/versions/v10.15.0"
+    creates: "{{ ansible_env.HOME }}/.nvm/versions/node/v10.15.0"
