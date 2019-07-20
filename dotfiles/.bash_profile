@@ -32,8 +32,7 @@ alias gd="git diff"
 # Only show the current directory's name in the tab 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
-source ~/.nvm/nvm.sh
-nvm use v10.15.0
+nvm use --delete-prefix v10.15.0 --silent
 
 # ===Go Settings===
 export GOPATH=$HOME/go
