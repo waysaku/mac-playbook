@@ -44,10 +44,16 @@
 
 - name: install nvm
   shell: >
-    curl https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | sh
-    creates={{ ansible_env.HOME }}/.nvm/nvm.sh
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+  args:
+    executable: /bin/bash
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
-- name: install node and set version
+- name: install node
   shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install v10.15.0 && nvm use --delete-prefix v10.15.0 --silent"
-
+    . {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install v10.15.0
+  args:
+    executable: /bin/bash
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.nvm/versions/v10.15.0"
